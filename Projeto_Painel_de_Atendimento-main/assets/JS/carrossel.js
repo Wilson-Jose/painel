@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Lista de vídeos atualizada. Recarregando...');
             loadAndRender();
         }
-        // Se apenas o índice mudar, só troca o slide
+        // NOVO: Se apenas o índice mudar, só troca o slide
         if (event.key === indexKey) {
             console.log('Índice do vídeo atualizado.');
             const newIndex = parseInt(event.newValue) || 0;
