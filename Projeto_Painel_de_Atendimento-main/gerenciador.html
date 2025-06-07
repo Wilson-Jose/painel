@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <div class="control-panel">
+        <h2>Adicionar Novo Vídeo</h2>
+        <div class="add-section">
+            <input type="text" id="video-url-input" placeholder="Cole a URL do vídeo do YouTube aqui">
+            <button id="add-video-btn">Adicionar</button>
+        </div>
+        <h2>Navegação</h2>
+        <div class="navigation-section">
+            <button id="prev-video-btn">⭠ Anterior</button>
+            <button id="next-video-btn">Próximo ⭢</button>
+        </div>
+        <h2>Vídeos Atuais</h2>
+        <ul id="video-list">
+            </ul>
+    </div>
     <!--Rodapé-->
     <footer>
       <div class="footer">
@@ -26,44 +41,8 @@
         </div>
       </div>
       <script src="assets/JS/footer.js"></script>
+      <script src="assets/JS/gerenciamento.js"></script>a
     </footer>
-
-    <!-- Container de Vídeo abaixo do rodapé -->
-    <section class="video-container">
-      <video id="meuVideo" width="640" controls>
-        <source src="assets/Videos/video1.mp4" type="video/mp4" />
-        Seu navegador não suporta vídeo HTML5.
-      </video>
-      <div class="video-buttons">
-        <button onclick="trocarVideo('assets/Videos/video1.mp4')">Vídeo 1</button>
-        <button onclick="trocarVideo('assets/Videos/video2.mp4')">Vídeo 2</button>
-        <button onclick="trocarVideo('assets/Videos/video3.mp4')">Vídeo 3</button>
-      </div>
-    </section>
-
-    <!-- Script para trocar vídeo -->
-    <script>
-      const videos = [
-        'assets/Videos/video1.mp4',
-        'assets/Videos/video2.mp4',
-        'assets/Videos/video3.mp4'
-      ];
-    
-      let videoAtual = 0;
-      const videoElement = document.getElementById('meuVideo');
-    
-      function trocarVideo(src) {
-        videoAtual = videos.indexOf(src);
-        videoElement.src = src;
-        videoElement.play();
-      }
-    
-      videoElement.addEventListener('ended', () => {
-        videoAtual = (videoAtual + 1) % videos.length;
-        videoElement.src = videos[videoAtual];
-        videoElement.play();
-      });
-    </script>
-    
+    </section>  
   </body>
 </html>
